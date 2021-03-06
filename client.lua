@@ -10,22 +10,17 @@
 ]]--
 
 
-vRP = Proxy.getInterface("vRP")
-Nolfi = Tunnel.getInterface("nolfigetplayerid",Nolfi)
-
 Citizen.CreateThread(function()
 	while true do
 
 		local Buttons = {
-			{index = 0,name = "Join Server",url = "fivem://connect/94.130.9.144:30120"}
-			{index = 1,name = "Discord",url = "https://discord.gg/YtKpN4knnU"},
+			{index = 0,name = "Join Server",url = "fivem://connect/94.130.9.144:30120"},
+			{index = 1,name = "Discord",url = "https://discord.gg/YtKpN4knnU"}
 		}
 
 		local Maxplayers = "64"
 
 		local playerName = GetPlayerName(PlayerId())
-
-		local playerid = Nolfi.getPlayerID()
 
 		local onlinePlayers = 0
 		for i = 0, 255 do
@@ -40,12 +35,12 @@ Citizen.CreateThread(function()
 
         SetDiscordRichPresenceAssetText(playerName)
 
-		SetRichPresence("Online: "..onlinePlayers.."/"..Maxplayers.." | ID: "..playerid)
+		SetRichPresence("Online: "..onlinePlayers.."/"..Maxplayers.." | Name: "..playerName)
 
 		for _, v in pairs(Buttons) do
 		SetDiscordRichPresenceAction(v.index, v.name, v.url)
 		end
         -- It updates every minute just in case.
-		Citizen.Wait(60000)
+		Citizen.Wait(1500)
 	end
 end)
