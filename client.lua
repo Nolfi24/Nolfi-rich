@@ -26,7 +26,6 @@ Citizen.CreateThread(function()
 		local playerName = GetPlayerName(PlayerId())
 
 		local playerid = Nolfi.getPlayerID()
-		-- local playerid = "1"
 
 		local onlinePlayers = 0
 		for i = 0, 255 do
