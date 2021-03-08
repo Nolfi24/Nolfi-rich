@@ -9,7 +9,6 @@
 ------------------------------------------------------
 ]]--
 
-
 Citizen.CreateThread(function()
 	while true do
 
@@ -18,9 +17,16 @@ Citizen.CreateThread(function()
 			{index = 1,name = "Discord",url = "https://discord.gg/YtKpN4knnU"}
 		}
 
-		local Maxplayers = "64"
-
+		local Maxplayers = "500"
+			
 		local playerName = GetPlayerName(PlayerId())
+			
+		MySQL.Async.fetchAll('SELECT * FROM user WHERE name = @name', {
+		['@name'] = playerName
+	        }, function(result)
+		   local playFirstname = result[i].firstname
+		   local playLastname = result[i].lastname
+	        end)
 
 		local onlinePlayers = 0
 		for i = 0, 255 do
@@ -33,9 +39,9 @@ Citizen.CreateThread(function()
 
 		SetDiscordRichPresenceAsset('logo')
 
-        SetDiscordRichPresenceAssetText(playerName)
+                SetDiscordRichPresenceAssetText(playerName)
 
-		SetRichPresence("Online: "..onlinePlayers.."/"..Maxplayers.." | Name: "..playerName)
+		SetRichPresence("Online: "..onlinePlayers.."/"..Maxplayers.." | Name: "..playFirstname ..playLastname)
 
 		for _, v in pairs(Buttons) do
 		SetDiscordRichPresenceAction(v.index, v.name, v.url)
