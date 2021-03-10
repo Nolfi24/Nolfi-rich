@@ -9,38 +9,24 @@
 ------------------------------------------------------
 ]]--
 
-
 Citizen.CreateThread(function()
 	while true do
-
-		local Buttons = {
-			{index = 0,name = "Join Server",url = "fivem://connect/94.130.9.144:30120"},
-			{index = 1,name = "Discord",url = "https://discord.gg/YtKpN4knnU"}
-		}
-
-		local Maxplayers = "64"
-
+		local Buttons = Config.Buttons
+		local Maxplayers = Config.Maxplayers
 		local playerName = GetPlayerName(PlayerId())
-
 		local onlinePlayers = 0
 		for i = 0, 255 do
 			if NetworkIsPlayerActive(i) then
-				onlinePlayers = onlinePlayers+1
+				onlinePlayers = onlinePlayers + 1
 			end
 		end
-
-		SetDiscordAppId(816941126232703037)
-
-		SetDiscordRichPresenceAsset('logo')
-
+		SetDiscordAppId(Config.DiscordAppId)
+		SetDiscordRichPresenceAsset(Config.LogoAsset)
         SetDiscordRichPresenceAssetText(playerName)
-
 		SetRichPresence("Online: "..onlinePlayers.."/"..Maxplayers.." | Name: "..playerName)
-
 		for _, v in pairs(Buttons) do
 		SetDiscordRichPresenceAction(v.index, v.name, v.url)
 		end
-        -- It updates every minute just in case.
-		Citizen.Wait(1500)
+		Citizen.Wait(Config.WaitTime)
 	end
 end)
