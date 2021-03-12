@@ -16,7 +16,7 @@ Config.Buttons {
     },
     {
         index = 1,
-        name = "Discord",
+        name = "Join Discord",
         url = "https://discord.gg/YtKpN4knnU"
     }
 }
