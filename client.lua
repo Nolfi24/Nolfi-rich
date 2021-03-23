@@ -11,8 +11,8 @@
 
 Citizen.CreateThread(function()
 	while true do
-		local Buttons = Config.Buttons
-		local Maxplayers = Config.Maxplayers
+		local Buttons = (Config.buttons)
+		local Maxplayers = (Config.Maxplayers)
 		local playerName = GetPlayerName(PlayerId())
 		local onlinePlayers = 0
 		for i = 0, 255 do
