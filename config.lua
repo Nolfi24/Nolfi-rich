@@ -1,10 +1,10 @@
 Config = {}
 
-Config.DiscordAppId = "816941126232703037"
+Config.DiscordAppId = "816941126232703037" -- Your Discord Appid
 
-Config.LogoAsset = "logo"
+Config.LogoAsset = "logo" -- The name of the Logo
 
-Config.Maxplayers = "64"
+Config.Maxplayers = "64" -- Max Players on your Server
 
 Config.WaitTime = 1500
 
