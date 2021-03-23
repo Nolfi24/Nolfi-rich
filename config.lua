@@ -11,10 +11,6 @@
 
 Config = {}
 
-Config.Serverip = "127.0.0.1" -- Your Servers Ip
-Config.ServerPort = "30120" -- Your Servers Port
-Config.Discordinvite = "https://discord.gg/6PHWQHSg4T" -- Invitelink to your discord
-
 Config.DiscordAppId = "820673044678443068" -- Your Discord Appid
 
 Config.LogoAsset = "logo" -- The name of the Logo
@@ -26,12 +22,12 @@ Config.WaitTime = 1500
 Config.buttons = {
     {
         index = 0,
-        name = "Join Server",
-        url = "fivem://connect/"Config.Serverip":"Config.ServerPort""
+        name = 'Join Server',
+        url = 'fivem://connect/127.0.0.1:30120',
     },
     {
         index = 1,
-        name = "Join Discord",
-        url = Config.Discordinvite
+        name = 'Join Discord',
+        url = "https://discord.gg/6PHWQHSg4T",
     },
 }
