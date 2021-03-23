@@ -1,6 +1,21 @@
+--[[
+ __   __     ______     __         ______   __    
+/\ "-.\ \   /\  __ \   /\ \       /\  ___\ /\ \   
+\ \ \-.  \  \ \ \/\ \  \ \ \____  \ \  __\ \ \ \  
+ \ \_\\"\_\  \ \_____\  \ \_____\  \ \_\    \ \_\ 
+  \/_/ \/_/   \/_____/   \/_____/   \/_/     \/_/ 
+-----------------------CREDITS------------------------
+-- Copyright 2020-2021 ©Nolfi. All rights reserved  --
+------------------------------------------------------
+]]--
+
 Config = {}
 
-Config.DiscordAppId = "816941126232703037" -- Your Discord Appid
+Config.Serverip = "127.0.0.1" -- Your Servers Ip
+Config.ServerPort = "30120" -- Your Servers Port
+Config.Discordinvite = "https://discord.gg/6PHWQHSg4T" -- Invitelink to your discord
+
+Config.DiscordAppId = "820673044678443068" -- Your Discord Appid
 
 Config.LogoAsset = "logo" -- The name of the Logo
 
@@ -8,15 +23,15 @@ Config.Maxplayers = "64" -- Max Players on your Server
 
 Config.WaitTime = 1500
 
-Config.Buttons {
+Config.buttons = {
     {
         index = 0,
         name = "Join Server",
-        url = "fivem://connect/94.130.9.144:30120"
+        url = "fivem://connect/"Config.Serverip":"Config.ServerPort""
     },
     {
         index = 1,
         name = "Join Discord",
-        url = "https://discord.gg/YtKpN4knnU"
-    }
+        url = Config.Discordinvite
+    },
 }
