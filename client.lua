@@ -22,7 +22,7 @@ Citizen.CreateThread(function()
 		end
 		SetDiscordAppId(Config.DiscordAppId)
 		SetDiscordRichPresenceAsset(Config.LogoAsset)
-        SetDiscordRichPresenceAssetText(playerName)
+        	SetDiscordRichPresenceAssetText(playerName)
 		SetRichPresence("Online: "..onlinePlayers.."/"..Maxplayers.." | Name: "..playerName)
 		for _, v in pairs(Buttons) do
 		SetDiscordRichPresenceAction(v.index, v.name, v.url)
