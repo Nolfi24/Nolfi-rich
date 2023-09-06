@@ -11,11 +11,11 @@
 
 Config = {}
 
-Config.DiscordAppId = "820673044678443068" -- Your Discord Appid
+Config.DiscordAppId = "AppId" -- Your Discord Appid
 
 Config.LogoAsset = "logo" -- The name of the Logo
 
-Config.Maxplayers = "64" -- Max Players on your Server
+Config.vRPID = true -- set to false for standalone
 
 Config.WaitTime = 1500
 
@@ -28,6 +28,6 @@ Config.buttons = {
     {
         index = 1,
         name = 'Join Discord',
-        url = "https://discord.gg/6PHWQHSg4T",
+        url = "https://discord.gg/123",
     },
 }
